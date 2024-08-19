@@ -3,8 +3,7 @@ package com.etiya.staj.model;
 import lombok.Data;
 
 @Data
-public class Company {
+public class Spec {
     private String name;
-    private String catchPhrase;
-    private String bs;
+    private Container container;
 }
