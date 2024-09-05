@@ -1,8 +1,9 @@
 package com.etiya.staj.controller;
 
 import com.etiya.staj.business.ItemService;
-import com.etiya.staj.model.ItemDb;
-import com.etiya.staj.model.ItemDto;
+import com.etiya.staj.model.items.ItemDb;
+import com.etiya.staj.model.items.ItemDto;
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,5 +26,16 @@ public class ItemController {
     @PostMapping()
     public ItemDb saveAll(@RequestBody ItemDb item){
         return service.addAllItems(item);
+    }
+
+    @GetMapping("/getSaved")
+    public List<ItemDb> getSaved(@RequestParam(required = false) String namespace,
+                                @RequestParam(required = false) String date){
+        return service.getAllSaved(namespace, date);
+    }
+
+    @GetMapping("/nomatch")
+    public List<ItemDto> getAllNotMatching(@RequestParam(required = true) String email) throws MessagingException {
+        return service.getAllItemsNotMatchingControl(email);
     }
 }

@@ -1,7 +1,7 @@
-package com.etiya.staj.utility;
+package com.etiya.staj.utility.mappers;
 
-import com.etiya.staj.model.ItemDto;
-import com.etiya.staj.model.Item;
+import com.etiya.staj.model.items.ItemDto;
+import com.etiya.staj.model.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;

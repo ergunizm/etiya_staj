@@ -1,4 +1,4 @@
-package com.etiya.staj.model;
+package com.etiya.staj.model.items;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
